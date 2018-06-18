@@ -8,13 +8,13 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-content padding>
+    <ion-content>
         <ion-list>
             
-            <ion-item (click)="gotoHome()">HOME</ion-item>
-            <ion-item (click)="gotoDash()">DASHBOARD</ion-item>
-            <ion-item (click)="gotoPend()">PENDING</ion-item>
-            <ion-item (click)="gotoSettings()">SETTINGS</ion-item>
+            <button ion-item (click)="gotoHome()" menuClose>HOME</button>
+            <button ion-item (click)="gotoDash()" menuClose>DASHBOARD</button>
+            <button ion-item (click)="gotoPend()" menuClose>PENDING</button>
+            <button ion-item (click)="gotoSettings()" menuClose>SETTINGS</button>
 
 
         </ion-list>

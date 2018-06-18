@@ -30,15 +30,15 @@ this.nav.setRoot(HomePage);
 
   }
   gotoDash(){
-    this.nav.setRoot(DashBoardPage);
+    this.nav.push(DashBoardPage);
     
       }
       gotoPend(){
-        this.nav.setRoot(PendingPage);
+        this.nav.push(PendingPage);
         
           }
           gotoSettings(){
-            this.nav.setRoot(SettingsPage);
+            this.nav.push(SettingsPage);
             
               }
 }

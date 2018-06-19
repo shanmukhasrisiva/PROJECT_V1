@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashBoardPage } from './../pages/dash-board/dash-board';
 import { HomePage } from '../pages/home/home';
+import {TimesheetPage} from '../pages/timesheet/timesheet'
 import { AuthServiceProvider } from './../providers/auth-service/auth-service';
 
 @Component({
@@ -29,17 +30,20 @@ export class MyApp {
 this.nav.setRoot(HomePage);
 
   }
-  gotoDash(){
+  gotoDash() {
     this.nav.push(DashBoardPage);
-    
-      }
-      gotoPend(){
-        this.nav.push(PendingPage);
-        
-          }
-          gotoSettings(){
-            this.nav.push(SettingsPage);
-            
-              }
+
+  }
+  gotoPend() {
+    this.nav.push(PendingPage);
+
+  }
+  gotoSettings() {
+    this.nav.push(SettingsPage);
+
+  }
+  gotoTimesheet() {
+    this.nav.push(TimesheetPage)
+  }
 }
 

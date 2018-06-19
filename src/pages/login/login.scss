@@ -1,15 +1,26 @@
 page-login {
  
     .login-content {
-      background: #ffffff;
-   
-      .logo-row {
-        padding-top: 50px;
-        padding-bottom: 20px;
+      background-image: url('../../assets/imgs/background.jpg');
+
+      
+      
+      .background-image{
+      -webkit-filter: blur(15px);
+      -moz-filter: blur(15px);
+      -o-filter: blur(15px);
+      -ms-filter: blur(15px);
+      filter: blur(15px);
+      //background: #ffffff;
       }
    
-      .login-box {
-        background: #00ffff;
+      .logo-row {
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+   
+      .backg {
+        background: #ff0000;
         padding: 20px 20px 0px 20px;
         margin-top: 30px;
       }
@@ -17,6 +28,12 @@ page-login {
       ion-row {
          align-items: center;
          text-align: center;
+       }
+
+       ion-input{
+        
+          text-align: center;
+         
        }
    
        ion-item {
@@ -27,6 +44,7 @@ page-login {
            border: 1px solid #ffffff;
            border-bottom: 0px !important;
            box-shadow: none !important;
+           
        }
    
        .signup-col {

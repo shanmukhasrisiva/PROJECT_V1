@@ -1,3 +1,5 @@
+import { WheelSelector } from '@ionic-native/wheel-selector';
+import { TimesheetPage } from './../pages/timesheet/timesheet';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -15,6 +17,8 @@ import { PendingDetailPage } from './../pages/pending-detail/pending-detail';
 import { DashBoardPage } from './../pages/dash-board/dash-board';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +27,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PendingPage,
     PendingDetailPage,
     SettingsPage,
-    DashBoardPage
+    DashBoardPage,
+    TimesheetPage
   ],
   imports: [
     BrowserModule,
@@ -39,13 +44,15 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PendingPage,
     PendingDetailPage,
     SettingsPage,
-    DashBoardPage
+    DashBoardPage,
+    TimesheetPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    WheelSelector
   ]
 })
 export class AppModule {}

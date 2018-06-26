@@ -38,9 +38,10 @@
     </mbsc-form>
 
     <ion-item>
-        <ion-label>dateTime input with min and max attrs</ion-label>
+        
         <ion-datetime 
-             displayFormat="MMM DD, YYYY"
+            id = "ttime"
+             displayFormat="	MMM-YYYY-DD"
              min="2016-06-10"
              max="2017-06-10"
              [(ngModel)]="dateObj"></ion-datetime>

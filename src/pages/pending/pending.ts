@@ -37,4 +37,10 @@ export class PendingPage {
     console.log('ionViewDidLoad PendingPage');
   }
 
+  onpagee(){
+    var a=document.getElementById("ttime");
+
+
+  }
+
 }

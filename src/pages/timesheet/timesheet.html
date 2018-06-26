@@ -3,6 +3,11 @@
 
   <ion-navbar>
     <ion-title>TIMESHEET</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="additem()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -17,49 +22,24 @@
         <ion-col col-3>
           <ion-row align-right>
           Total Hours</ion-row>
-          <ion-row class="txtsiz">20</ion-row></ion-col>
+          <ion-row class="txtsiz">{{add}}</ion-row></ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
  
    <ion-card>
-  <ion-list>
-   <ion-grid no-padding>
-
-  <ion-row>
-    <ion-col col-10><button (click)="openPicker()" ion-item>Opex Request Resolution</button></ion-col>
-    <ion-col col-1 ><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Analysis and resolution of the incident record</button></ion-col>
-    <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Delivery of resolved incident along with resolution</button></ion-col>
-    <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Opex_Adhoc Request Handling</button></ion-col>
-     <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Opex_Break Fixes</button></ion-col>
-     <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Opex_calls and coordination</button></ion-col>
-    <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Opex_deployment support for the break fixes</button></ion-col>
-    <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-10><button ion-item>Opex_health Check Monitoring</button></ion-col>
-    <ion-col col-1><button ion-button>4</button></ion-col>
-  </ion-row>
-
-</ion-grid>   
-  </ion-list>
-   </ion-card>
+  <ion-grid>
+     <ion-row>
+       <ion-col>
+      <ion-list>
+              <ion-item *ngFor="let todo of des">
+                  <h2>{{ todo }}    >></h2>
+              </ion-item>
+      </ion-list></ion-col> 
+      <ion-col>
+          <ion-list>
+                  <ion-item *ngFor="let hour of hours">
+                      <h2>{{ hour }}</h2>
+                  </ion-item>
+          </ion-list></ion-col> </ion-row></ion-grid></ion-card>
 </ion-content>

@@ -1,6 +1,5 @@
-import { WheelSelector } from '@ionic-native/wheel-selector';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the TimesheetPage page.
@@ -16,48 +15,65 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 })
 
 export class TimesheetPage {
-  Hours = {
-    Count: [
-      { description: '1' },
-      { description: '2' },
-      { description: '3' },
-      { description: '4' },
-      { description: '5' },
-      { description: '6' },
-      { description: '7' },
-      { description: '8' },
-      { description: '9' },
-      { description: '10' }
-    ]
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private selector: WheelSelector, private toastCtrl: ToastController) {
+public des=[];
+public hours: any;
+public add: int;
+
+add=0;
+des=[" "];
+hours=[" "];
+  additem()
+  {
+
+    let alert = this.alertCtrl.create({
+      title: 'Enter JOB and HOURS',
+      inputs: [
+        {
+          name: 'Description',
+          placeholder: 'Description'
+        },
+        {
+          name: 'Hours',
+          placeholder: 'Hours'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Add',
+          handler: data => {
+      this.des.push(data.Description);
+      this.hours.push(data.Hours);
+      //this.add+=data.hours;
+              
+          }
+        }
+      ]
+    });
+    alert.present();
   }
+
+
+
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TimesheetPage');
   }
 
-  openPicker() {
-    this.selector.show({
-      title: 'Select Number of Hours',
-      positiveButtonText: 'Choose',
-      negativeButtonText: 'Cancel',
-      items: [
-        this.Hours.Count
-      ]
-
-    }).then(result => {
-      let value = 'Selected ${result.description}';
-      let toast=this.toastCtrl.create({
-        message: value,
-        duration:4000
-      });
-      toast.present();
-    },
-    err =>console.log('Error: ',err)
-  );
-  }
-
+  
 }
 

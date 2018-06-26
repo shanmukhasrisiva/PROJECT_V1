@@ -22,4 +22,28 @@
 
 <ion-content padding>
 
+    <mbsc-form>
+        <div class="mbsc-form-group">
+            <div class="mbsc-form-group-title">One week view</div>
+            <mbsc-calendar [(ngModel)]="calendarOneWeek" display="inline" weeks="4" [options]="dateStrSettings" ></mbsc-calendar>
+        </div>
+        <!--<div class="mbsc-form-group">
+            <div class="mbsc-form-group-title">Two week view</div>
+            <mbsc-calendar [(ngModel)]="calendarTwoWeek" display="inline" weeks="2"></mbsc-calendar>
+        </div>
+        <div class="mbsc-form-group">
+            <div class="mbsc-form-group-title">Three week view</div>
+            <mbsc-calendar [(ngModel)]="calendarTreeWeek" display="inline" weeks="3"></mbsc-calendar>
+        </div>-->
+    </mbsc-form>
+
+    <ion-item>
+        <ion-label>dateTime input with min and max attrs</ion-label>
+        <ion-datetime 
+             displayFormat="MMM DD, YYYY"
+             min="2016-06-10"
+             max="2017-06-10"
+             [(ngModel)]="dateObj"></ion-datetime>
+     </ion-item> 
+
 </ion-content>

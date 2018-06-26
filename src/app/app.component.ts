@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashBoardPage } from './../pages/dash-board/dash-board';
 import { HomePage } from '../pages/home/home';
-import {TimesheetPage} from '../pages/timesheet/timesheet'
+import {TimesheetPage} from '../pages/timesheet/timesheet';
 import { AuthServiceProvider } from './../providers/auth-service/auth-service';
 
 @Component({
@@ -17,6 +17,7 @@ import { AuthServiceProvider } from './../providers/auth-service/auth-service';
 export class MyApp {
   rootPage:any = LoginPage;
   @ViewChild(Nav) nav: Nav;
+  
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

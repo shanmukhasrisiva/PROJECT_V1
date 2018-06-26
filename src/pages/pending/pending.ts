@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MbscModule, MbscCalendarOptions } from '@mobiscroll/angular';
+import { FormsModule } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { TimesheetPage } from './../timesheet/timesheet';
 /**
  * Generated class for the PendingPage page.
  *
@@ -8,14 +10,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-pending',
   templateUrl: 'pending.html',
 })
 export class PendingPage {
+  calendarOneWeek: String;
+  @ViewChild(Nav) nav: Nav;
+
+  dateStrSettings: MbscCalendarOptions = {
+    
+    max: '2018-08-31',
+    min: '08/01/2018'
+
+
+};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    
   }
 
   ionViewDidLoad() {

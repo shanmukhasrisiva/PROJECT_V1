@@ -44,7 +44,8 @@
              displayFormat="	MMM-YYYY-DD"
              min="2016-06-10"
              max="2017-06-10"
-             [(ngModel)]="dateObj"></ion-datetime>
+             [(ngModel)]="dateObj"
+             (ionChange)="getdatee(dateObj)"></ion-datetime>
      </ion-item> 
 
 </ion-content>

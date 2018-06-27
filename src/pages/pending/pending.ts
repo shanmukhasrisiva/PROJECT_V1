@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { TimesheetPage } from './../timesheet/timesheet';
-/**
+
+ /**
  * Generated class for the PendingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
@@ -20,6 +21,8 @@ export class PendingPage {
   calendarOneWeek: String;
   @ViewChild(Nav) nav: Nav;
 
+  dateobj: any;
+
   dateStrSettings: MbscCalendarOptions = {
     
     max: '2018-08-31',
@@ -32,6 +35,13 @@ export class PendingPage {
 
     
   }
+
+getdatee(datobj){
+
+
+this.navCtrl.push(TimesheetPage);
+
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PendingPage');

@@ -17,8 +17,6 @@ import { PendingPage } from './../pages/pending/pending';
 import { PendingDetailPage } from './../pages/pending-detail/pending-detail';
 import { DashBoardPage } from './../pages/dash-board/dash-board';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { MbscModule } from '@mobiscroll/angular';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({

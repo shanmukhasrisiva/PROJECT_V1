@@ -21,7 +21,7 @@ export class PendingPage {
   calendarOneWeek: String;
   @ViewChild(Nav) nav: Nav;
 
-  dateobj: any;
+//  dateobj: any;
 
   dateStrSettings: MbscCalendarOptions = {
     
@@ -36,10 +36,10 @@ export class PendingPage {
     
   }
 
-getdatee(datobj){
+getdatee(dateObj){
 
-
-this.navCtrl.push(TimesheetPage);
+this.navCtrl.push(TimesheetPage, {
+  data: dateObj});
 
 }
 

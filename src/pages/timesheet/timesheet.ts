@@ -16,17 +16,16 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 
 export class TimesheetPage {
   
-
+color: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+    this.color=navParams.get('data');
   }
 
 public des=[];
-public hours: any;
-public add: int;
+public hours=[];
 
-add=0;
-des=[" "];
-hours=[" "];
+add = 0;
+
   additem()
   {
 
@@ -55,7 +54,7 @@ hours=[" "];
           handler: data => {
       this.des.push(data.Description);
       this.hours.push(data.Hours);
-      //this.add+=data.hours;
+      this.add = this.add + data.hours;
               
           }
         }

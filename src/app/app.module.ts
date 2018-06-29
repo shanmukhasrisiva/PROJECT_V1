@@ -17,6 +17,10 @@ import { PendingPage } from './../pages/pending/pending';
 import { PendingDetailPage } from './../pages/pending-detail/pending-detail';
 import { DashBoardPage } from './../pages/dash-board/dash-board';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+//import { firebaseConfig } from '../config';
+import { firebaseConfig } from '../Config';
 
 
 @NgModule({
@@ -36,6 +40,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig.fire),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -53,6 +58,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuth,
     AuthServiceProvider
   ]
 })

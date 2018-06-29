@@ -53,8 +53,9 @@ add = 0;
           text: 'Add',
           handler: data => {
       this.des.push(data.Description);
+      this.add = this.add + parseInt(data.Hours);
       this.hours.push(data.Hours);
-      this.add = this.add + data.hours;
+      
               
           }
         }

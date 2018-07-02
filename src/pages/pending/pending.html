@@ -22,24 +22,25 @@
 
 <ion-content padding>
 
-    <mbsc-form>
+     <!--<mbsc-form>
         <div class="mbsc-form-group">
             <div class="mbsc-form-group-title">One week view</div>
             <mbsc-calendar [(ngModel)]="calendarOneWeek" display="inline" weeks="4" [options]="dateStrSettings" ></mbsc-calendar>
         </div>
-        <!--<div class="mbsc-form-group">
+       <div class="mbsc-form-group">
             <div class="mbsc-form-group-title">Two week view</div>
             <mbsc-calendar [(ngModel)]="calendarTwoWeek" display="inline" weeks="2"></mbsc-calendar>
         </div>
         <div class="mbsc-form-group">
             <div class="mbsc-form-group-title">Three week view</div>
             <mbsc-calendar [(ngModel)]="calendarTreeWeek" display="inline" weeks="3"></mbsc-calendar>
-        </div>-->
-    </mbsc-form>
+        </div>
+    </mbsc-form>-->
 
     <ion-item>
         
         <ion-datetime 
+            placeholder = "Click"
             id = "ttime"
              displayFormat="	MMM-YYYY-DD"
              min="2016-06-10"
@@ -47,5 +48,11 @@
              [(ngModel)]="dateObj"
              (ionChange)="getdatee(dateObj)"></ion-datetime>
      </ion-item> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>CLICK Above To Add a Timesheet</h1>
 
 </ion-content>

@@ -61,8 +61,8 @@ this.nav.setRoot(HomePage);
     this.nav.push(SettingsPage);
 
   }
-  gotoTimesheet() {
-    this.nav.push(TimesheetPage)
-  }
+//  gotoTimesheet() {
+  //  this.nav.push(TimesheetPage)
+  //}
 }
 

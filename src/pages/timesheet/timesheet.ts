@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Button } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the TimesheetPage page.
@@ -17,54 +18,103 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class TimesheetPage {
   
 color: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private toastCtrl: ToastController) {
     this.color=navParams.get('data');
   }
 
 public des=[];
 public hours=[];
+public selctval='';
+public selctime='';
+public works=["Health Check","Others","Meeting","OptIN"];
+public times=[1,2,3,4,5,6,7,8];
 
 add = 0;
 
   additem()
   {
+      this.des.push(this.selctval);
+      this.add = this.add + parseInt(this.selctime);
+      this.hours.push(parseInt(this.selctime));
+      
+              
+          }
+        
+save()
+{
 
-    let alert = this.alertCtrl.create({
-      title: 'Enter JOB and HOURS',
-      inputs: [
-        {
-          name: 'Description',
-          placeholder: 'Description'
-        },
-        {
-          name: 'Hours',
-          placeholder: 'Hours'
-        }
-      ],
+  
+    const confirm = this.alertCtrl.create({
+      title: 'Conformation',
+      message: 'Do you want to save the timesheet',
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: data => {
-            console.log('Cancel clicked');
+          text: 'Disagree',
+          handler: () => {
+            console.log('Disagree clicked');
           }
         },
         {
-          text: 'Add',
-          handler: data => {
-      this.des.push(data.Description);
-      this.add = this.add + parseInt(data.Hours);
-      this.hours.push(data.Hours);
-      
-              
+          text: 'Agree',
+          handler: () => {
+            let toast = this.toastCtrl.create({
+              message: 'Successfully Saved',
+              duration: 3000,
+              position: 'center'
+            });
+          
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+          
+            toast.present();
           }
         }
       ]
     });
-    alert.present();
-  }
+    confirm.present();
+  
 
 
+}
+submit()
+{
+
+  const confirm = this.alertCtrl.create({
+    title: 'Conformation',
+    message: 'Do you want to submit the timesheet',
+    buttons: [
+      {
+        text: 'Disagree',
+        handler: () => {
+          console.log('Disagree clicked');
+        }
+      },
+      {
+        text: 'Agree',
+        handler: () => {
+          let toast = this.toastCtrl.create({
+            message: 'Successfully submitted',
+            duration: 3000,
+            position: 'center'
+          });
+          
+          toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+          });
+        
+          toast.present();
+        }
+      }
+    ]
+  });
+  confirm.present();
+
+
+
+
+
+}
 
 
 

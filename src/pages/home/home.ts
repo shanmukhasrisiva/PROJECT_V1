@@ -9,12 +9,12 @@ import { LoginPage } from './../login/login';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  username = '';
-  email = '';
+  username = 'Balakrishna';
+  designation = 'Associate Software Engineer';
+  fdate = "25/05/2018";
+  tdate = "25/06/2018";
   constructor(private nav: NavController, private auth: AuthServiceProvider) {
-   // let info = this.auth.getUserInfo();
-    //this.username = info['name'];
-    //this.email = info['email'];
+    
   }
  
   public logout() {

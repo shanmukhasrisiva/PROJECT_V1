@@ -19,20 +19,25 @@
 </ion-header>
  
 <ion-content class="home" padding>
-  <h3>Welcome inside, {{username}}!</h3>
+    <h3>Welcome inside, {{username}}!</h3>
+    <ion-card>
+        <img id="bgg" src="//tutorialsplane.com/wp-content/uploads/2017/01/ace-1807511__340.jpg"/>
+        <ion-avatar id="profile-info">
+            <img id="profile-image" src="assets/imgs/bala.jpg">
+          </ion-avatar>
+        
+        <div class="card-title">{{username}}</div>
+        <div class="card-subtitle">{{designation}}</div>
+      </ion-card>
+    <h3> Fill TimeSheet:</h3>
+      
+        <div>From:{{fdate}}</div>
+      <div>  To:{{tdate}}</div>
 
-  <ion-card>
-      <ion-item>
-        <ion-avatar>
-          <img src="assets/imgs/bala.jpg"/>
-        </ion-avatar>
-        <h2>Balakrishna</h2>
-        <h5>02.12.1996</h5>
-      </ion-item>
-      <ion-card-content>
-        <p>Hi this is balakrishna</p>
-      </ion-card-content>
-    </ion-card>
 
-  Your Email is: {{email}}
+
+      
+      
+
+  
 </ion-content>

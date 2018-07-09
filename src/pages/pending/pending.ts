@@ -1,8 +1,8 @@
-import { MbscModule, MbscCalendarOptions } from '@mobiscroll/angular';
-import { FormsModule } from '@angular/forms';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { TimesheetPage } from './../timesheet/timesheet';
+import { CalendarComponentOptions } from 'ion2-calendar'
+import { DatePipe } from '@angular/common';
 
  /**
  * Generated class for the PendingPage page.
@@ -21,25 +21,33 @@ export class PendingPage {
   calendarOneWeek: String;
   @ViewChild(Nav) nav: Nav;
 
-//  dateobj: any;
-
-  dateStrSettings: MbscCalendarOptions = {
-    
-    max: '2018-08-31',
-    min: '08/01/2018'
-
-
-};
+date: DatePipe;
+type: string;
+fyear=2018;
+fmon=5;
+fdate=25;
+tyear=2018;
+tmon=6;
+tdate=25;
+count=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     
   }
 
-getdatee(dateObj){
+  options: CalendarComponentOptions = {
+    disableWeeks:[0,6],
+    from: new Date(this.fyear,this.fmon-1,this.fdate),
+    to: new Date(this.tyear,this.tmon-1,this.tdate)
+  };
+onChange(){
+  
 
-this.navCtrl.push(TimesheetPage, {
-  data: dateObj});
+  this.navCtrl.push(TimesheetPage, {
+    data: this.date});
+  
+
 
 }
 
@@ -47,10 +55,6 @@ this.navCtrl.push(TimesheetPage, {
     console.log('ionViewDidLoad PendingPage');
   }
 
-  onpagee(){
-    var a=document.getElementById("ttime");
 
-
-  }
 
 }

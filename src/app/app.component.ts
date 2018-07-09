@@ -8,9 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashBoardPage } from './../pages/dash-board/dash-board';
 import { HomePage } from '../pages/home/home';
-import {TimesheetPage} from '../pages/timesheet/timesheet';
 import { AuthServiceProvider } from './../providers/auth-service/auth-service';
-import * as firebase from 'firebase/app';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,19 +26,6 @@ export class MyApp {
       splashScreen.hide();
     });
     
-    //this.auth.afAuth.authState
-    //.subscribe(
-     // user => {
-      //  if (user) {
-       //   this.rootPage = HomePage;
-       /// } else {
-         // this.rootPage = LoginPage;
-       // }
-      //},
-     // () => {
-     //   this.rootPage = LoginPage;
-      //}
-    //);
   }
 
   
@@ -50,19 +35,16 @@ this.nav.setRoot(HomePage);
 
   }
   gotoDash() {
-    this.nav.push(DashBoardPage);
+    this.nav.setRoot(DashBoardPage);
 
   }
   gotoPend() {
-    this.nav.push(PendingPage);
+    this.nav.setRoot(PendingPage);
 
   }
   gotoSettings() {
-    this.nav.push(SettingsPage);
+    this.nav.setRoot(SettingsPage);
 
   }
-//  gotoTimesheet() {
-  //  this.nav.push(TimesheetPage)
-  //}
 }
 

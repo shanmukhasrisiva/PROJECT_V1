@@ -26,25 +26,25 @@
 
   <ion-grid>
       <ion-row>
-        <ion-col col-8>
-          <ion-row row-4>
-            <ion-select placeholder="SELECT WORK" [(ngModel)]="selctval" selectedText>
+        <ion-col>
+          
+            <ion-select placeholder="WORK" [(ngModel)]="selctval" selectedText>
                 <ion-option *ngFor="let work of works" value="{{work}}">{{work}}</ion-option>
             </ion-select>
-          </ion-row>
-          <ion-row row-4>
-              <ion-select [(ngModel)]="selctime" placeholder="SELECT TIME" selectedText>
+          </ion-col>
+          
+          <ion-col>
+              <ion-select [(ngModel)]="selctime" placeholder="TIME" selectedText>
                   <ion-option *ngFor="let time of times" value="{{time}}">{{time}}</ion-option>
               </ion-select>
-          </ion-row>
         </ion-col>
-        <ion-col col-2>
+        
             <ion-buttons end>
                 <button ion-button (click)="additem()">
                   <ion-icon name="add"></ion-icon>
                 </button>
               </ion-buttons>      
-        </ion-col>
+       
       </ion-row>
     </ion-grid>
   

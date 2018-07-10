@@ -37,6 +37,7 @@ count=0;
   }
 
   options: CalendarComponentOptions = {
+    
     disableWeeks:[0,6],
     from: new Date(this.fyear,this.fmon-1,this.fdate),
     to: new Date(this.tyear,this.tmon-1,this.tdate)

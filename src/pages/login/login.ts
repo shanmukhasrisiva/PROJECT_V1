@@ -5,6 +5,7 @@ import { DashBoardPage } from '../dash-board/dash-board';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import {PendingDetailPage} from './../pending-detail/pending-detail';
 
 /**
  * Generated class for the LoginPage page.
@@ -38,7 +39,14 @@ export class LoginPage {
         this.showError(error);
       });
   }
- 
+ forgot(){
+
+this.nav.push(PendingDetailPage);
+
+
+
+ }
+
   showLoading() {
     this.loading = this.loadingCtrl.create({
       content: 'Please wait...',

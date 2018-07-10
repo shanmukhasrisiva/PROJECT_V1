@@ -34,8 +34,9 @@ add = 0;
   additem()
   {
       this.des.push(this.selctval);
-      this.add = this.add + parseInt(this.selctime);
       this.hours.push(parseInt(this.selctime));
+      this.add = this.add + parseInt(this.selctime);
+      
       
               
           }
